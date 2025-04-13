@@ -8,5 +8,24 @@ return {
 			"MunifTanjim/nui.nvim",
 			-- {"3rd/image.nvim", opts = {}}, -- Optional image support in preview window: See `# Preview Mode` for more information
 		},
+		config = function()
+			require("neo-tree").setup({
+				window = {
+					position = "right",
+					mappings = {
+						["l"] = "open",
+						["h"] = "close_node",
+						["P"] = {
+							"toggle_preview",
+							config = {
+								use_float = false,
+								-- use_image_nvim = true,
+								-- title = 'Neo-tree Preview',
+							},
+						},
+					},
+				},
+			})
+		end,
 	},
 }
