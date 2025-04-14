@@ -48,6 +48,7 @@ return {
 				{ "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", desc = "Go to Definition" },
 				{ "gr", "<cmd>lua vim.lsp.buf.references()<CR>", desc = "Find References" },
 				{ "gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>", desc = "Go to Type Definition" },
+				--				{ "<C-/>", "<cmd>ToggleTerm<CR>", desc = "Toggle terminal" },
 			})
 		end,
 	},
