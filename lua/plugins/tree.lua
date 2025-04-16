@@ -13,12 +13,13 @@ return {
 				window = {
 					position = "right",
 					mappings = {
+						["<space>"] = false,
 						["l"] = "open",
 						["h"] = "close_node",
 						["P"] = {
 							"toggle_preview",
 							config = {
-								use_float = false,
+								use_float = true,
 								-- use_image_nvim = true,
 								-- title = 'Neo-tree Preview',
 							},

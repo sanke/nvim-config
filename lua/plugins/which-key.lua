@@ -19,9 +19,12 @@ return {
 				},
 			})
 
+			local harpoon = require("harpoon")
+
 			require("which-key").add({
 				{ "<leader>b", group = "buffer" },
-				{ "<leader>e", "<cmd>Neotree toggle<CR>", desc = "File tree" },
+				{ "<leader>e", "<cmd>Neotree toggle filesystem<CR>", desc = "File tree" },
+				{ "<leader>w", "<cmd>Neotree toggle filesystem reveal<CR>", desc = "File tree (current file)" },
 				{ "<leader>r", "<cmd>Telescope registers<CR>", desc = "Registers" },
 				{ "<leader>c", group = "Code" },
 				{ "<leader>cq", "<cmd>lua vim.lsp.buf.code_action()<CR>", desc = "Quick fix" },
@@ -48,7 +51,70 @@ return {
 				{ "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", desc = "Go to Definition" },
 				{ "gr", "<cmd>lua vim.lsp.buf.references()<CR>", desc = "Find References" },
 				{ "gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>", desc = "Go to Type Definition" },
-				--				{ "<C-/>", "<cmd>ToggleTerm<CR>", desc = "Toggle terminal" },
+				{ "<leader>h", group = "harpoon" },
+				{
+					"<leader>hh",
+					function()
+						harpoon.ui:toggle_quick_menu(harpoon:list())
+					end,
+					desc = "Harpoon marks",
+				},
+				{
+					"<leader>ha",
+					function()
+						harpoon:list():add()
+					end,
+					desc = "Harpoon add",
+				},
+				{
+					"<F1>",
+					function()
+						harpoon:list():select(1)
+					end,
+					desc = "Mark 1",
+				},
+				{
+					"<F2>",
+					function()
+						harpoon:list():select(2)
+					end,
+					desc = "Mark 2",
+				},
+				{
+					"<F3>",
+					function()
+						harpoon:list():select(3)
+					end,
+					desc = "Mark 3",
+				},
+				{
+					"<F4>",
+					function()
+						harpoon:list():select(4)
+					end,
+					desc = "Mark 4",
+				},
+				{
+					"<F5>",
+					function()
+						harpoon:list():select(5)
+					end,
+					desc = "Mark 5",
+				},
+				{
+					"<F6>",
+					function()
+						harpoon:list():select(6)
+					end,
+					desc = "Mark 6",
+				},
+				{
+					"<F7>",
+					function()
+						harpoon:list():select(7)
+					end,
+					desc = "Mark 7",
+				},
 			})
 		end,
 	},
