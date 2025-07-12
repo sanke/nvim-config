@@ -33,5 +33,6 @@ wk.add({
 		desc = "Format",
 	},
 	{ "<leader>ce", "<cmd>Telescope diagnostics<CR>", desc = "Errors" },
+	{ "<leader>cp", "<cmd>CodeCompanionChat<CR>", desc = "Copilot chat" },
 	{},
 })

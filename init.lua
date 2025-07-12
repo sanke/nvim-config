@@ -21,3 +21,14 @@ require("config.lazy")
 require("config/keymaps")
 require("telescope").load_extension("yank_history")
 require("telescope").load_extension("file_browser")
+
+require("codecompanion").setup({
+  strategies = {
+    chat = {
+      adapter = {
+        name = "copilot",
+        model = "claude-sonnet-4-20250514",
+      },
+    },
+  },
+})

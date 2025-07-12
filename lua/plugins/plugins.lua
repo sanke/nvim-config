@@ -15,6 +15,7 @@ return {
 				formatters_by_ft = {
 					lua = { "stylua" },
 					python = { "black" },
+					rust = { "rustfmt" },
 				},
 			})
 		end,
@@ -71,5 +72,17 @@ return {
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
 		},
+	},
+	{
+		"zbirenbaum/copilot.lua",
+		cmd = "Copilot",
+		event = "InsertEnter",
+		config = function()
+			require("copilot").setup({})
+		end,
+	},
+	{
+		"giuxtaposition/blink-cmp-copilot",
+		dependencies = { "github/copilot.vim" },
 	},
 }
