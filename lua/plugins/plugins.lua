@@ -85,4 +85,11 @@ return {
 		"giuxtaposition/blink-cmp-copilot",
 		dependencies = { "github/copilot.vim" },
 	},
+	{
+		"seblyng/roslyn.nvim",
+		ft = "cs",
+		opts = {
+			-- your configuration comes here; leave empty for default settings
+		},
+	},
 }

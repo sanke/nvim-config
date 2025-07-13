@@ -15,6 +15,7 @@
   "nvim-tree.lua": { "branch": "master", "commit": "6b5b36659688767fb9f133bb83024ab1466fe5cd" },
   "nvim-web-devicons": { "branch": "master", "commit": "a1366758b3a232036dc97be8ca41184aa3f50506" },
   "plenary.nvim": { "branch": "master", "commit": "857c5ac632080dba10aae49dba902ce3abf91b35" },
+  "roslyn.nvim": { "branch": "main", "commit": "6c1ff27c679d313e769f157bd2d444e1f081687d" },
   "telescope-file-browser.nvim": { "branch": "master", "commit": "7bf55ed0ff5be182ad3301cff266581fc1c56cce" },
   "telescope.nvim": { "branch": "master", "commit": "a0bbec21143c7bc5f8bb02e0005fa0b982edc026" },
   "tokyonight.nvim": { "branch": "main", "commit": "057ef5d260c1931f1dffd0f052c685dcd14100a3" },
