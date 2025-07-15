@@ -6,10 +6,10 @@ vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.clipboard = "unnamedplus"
 vim.opt.undofile = true
-
+vim.opt.scrolloff = 20
 -- Leader keys
 vim.g.mapleader = " "
-vim.g.maplocalleader = ","
+vim.g.maplocalleader = " "
 
 -- Undo directory
 local undodir = vim.fn.stdpath("data") .. "/.undo"
