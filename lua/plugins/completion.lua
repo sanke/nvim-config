@@ -8,6 +8,13 @@ return {
 		},
 		build = "cargo build --release",
 		version = "*",
+		config = function()
+			require("blink.cmp").setup({
+				keymap = {
+					["<CR>"] = { "select_and_accept", "fallback" },
+				},
+			})
+		end,
 		opts = {
 			completion = { documentation = { auto_show = true } },
 			sources = {
@@ -28,4 +35,3 @@ return {
 		},
 	},
 }
-

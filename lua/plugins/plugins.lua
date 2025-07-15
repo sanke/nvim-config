@@ -4,7 +4,6 @@ return {
 		lazy = false,
 		priority = 1000,
 		config = function()
-			-- load the colorscheme here
 			vim.cmd([[colorscheme tokyonight]])
 		end,
 	},
@@ -32,20 +31,11 @@ return {
 		end,
 	},
 	{
-		"nvim-telescope/telescope.nvim",
-		tag = "0.1.8",
-		dependencies = { "nvim-lua/plenary.nvim" },
-	},
-	{ "nvim-telescope/telescope-ui-select.nvim" },
-	{
 		"rmagatti/auto-session",
 		lazy = false,
 		config = function()
 			require("auto-session").setup({})
 		end,
-		---enables autocomplete for opts
-		---@module "auto-session"
-		---@type AutoSession.Config
 		opts = {
 			suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
 		},
@@ -54,12 +44,7 @@ return {
 		"gbprod/yanky.nvim",
 		opts = {
 			-- your configuration comes here
-			-- or leave it empty to use the default settings
-			-- refer to the configuration section below
 		},
-	},
-	{
-		"nvim-telescope/telescope-file-browser.nvim",
 	},
 	{
 		"ThePrimeagen/harpoon",
@@ -99,5 +84,22 @@ return {
 		config = function()
 			require("lualine").setup()
 		end,
+	},
+	{
+		"stevearc/oil.nvim",
+	},
+	{ "echasnovski/mini.nvim", version = false },
+	{
+		"nvim-telescope/telescope.nvim",
+		tag = "0.1.8",
+		dependencies = { "nvim-lua/plenary.nvim" },
+	},
+	{ "nvim-telescope/telescope-ui-select.nvim" },
+	{
+		"nvim-telescope/telescope-file-browser.nvim",
+	},
+	{
+		"MeanderingProgrammer/render-markdown.nvim",
+		ft = { "markdown", "codecompanion" },
 	},
 }

@@ -5,20 +5,26 @@ wk.add({
 	{ "<leader>f", group = "Files" },
 	{ "<leader>ff", "<cmd>Telescope find_files<CR>", desc = "Find file" },
 	{ "<leader>fb", "<cmd>Telescope buffers<CR>", desc = "Buffers" },
-	{ "<leader>fe", "<cmd>Telescope file_browser<CR>", desc = "File explorer" },
+	{
+		"<leader>fe",
+		function()
+			MiniFiles.open()
+		end,
+		desc = "File explorer",
+	},
 	{ "<leader>ft", "<cmd>NvimTreeOpen<CR>", desc = "Tree view" },
 	{ "<leader>fg", "<cmd>Telescope live_grep<CR>", desc = "Grep" },
 	{ "<leader>p", "<cmd>Telescope yank_history<CR>", desc = "Yank history" },
 	{ "<leader>a", group = "Harppon" },
 	{
-		"<leader>aa",
+		"<leader>al",
 		function()
 			require("harpoon"):list():add()
 		end,
 		desc = "Add",
 	},
 	{
-		"<leader>al",
+		"<leader>aa",
 		function()
 			toggle_telescope(require("harpoon"):list())
 		end,
