@@ -21,6 +21,7 @@ require("config.lazy")
 require("config/keymaps")
 require("telescope").load_extension("yank_history")
 require("telescope").load_extension("file_browser")
+require("telescope").load_extension("ui-select")
 
 require("codecompanion").setup({
   strategies = {
