@@ -1,37 +1,20 @@
 return {
 	{
-		"saghen/blink.cmp",
+		"hrsh7th/nvim-cmp",
 		dependencies = {
-			{
-				"giuxtaposition/blink-cmp-copilot",
-			},
+			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-path",
+			"hrsh7th/cmp-cmdline",
 		},
-		build = "cargo build --release",
-		version = "*",
 		config = function()
-			require("blink.cmp").setup({
-				keymap = {
-					["<CR>"] = { "select_and_accept", "fallback" },
+			require("cmp").setup({
+				sources = {
+					{ name = "nvim_lsp_signature_help" },
+					{ name = "nvim_lsp" },
 				},
+				-- other options like window, mapping, etc. can follow
 			})
 		end,
-		opts = {
-			completion = { documentation = { auto_show = true } },
-			sources = {
-				default = { "lsp", "path", "buffer", "copilot" },
-				providers = {
-					copilot = {
-						name = "Copilot",
-						module = "blink-cmp-copilot",
-						score_offset = 100,
-						async = true,
-					},
-				},
-			},
-			appearance = {
-				use_nvim_cmp_as_default = true,
-				nerd_font_variant = "mono",
-			},
-		},
 	},
 }

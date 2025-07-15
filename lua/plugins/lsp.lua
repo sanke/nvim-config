@@ -13,10 +13,15 @@ return {
 	},
 	{
 		"neovim/nvim-lspconfig",
-		dependencies = { "saghen/blink.cmp" },
 		init = function()
 			local lspConfigPath = require("lazy.core.config").options.root .. "/nvim-lspconfig"
 			vim.opt.runtimepath:prepend(lspConfigPath)
+		end,
+		config = function()
+			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+			require("lspconfig")["roslyn"].setup({
+				capabilities = capabilities,
+			})
 		end,
 	},
 	{
