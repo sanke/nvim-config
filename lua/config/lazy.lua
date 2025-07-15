@@ -24,5 +24,5 @@ require("lazy").setup({
     -- import your plugins
     { import = "plugins" },
   },
-  checker = { enabled = true },
+  checker = { enabled = false },
 })

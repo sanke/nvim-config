@@ -33,6 +33,31 @@ wk.add({
 		desc = "Format",
 	},
 	{ "<leader>ce", "<cmd>Telescope diagnostics<CR>", desc = "Errors" },
+	{
+		"<leader>ca",
+		function()
+			vim.lsp.buf.code_action()
+		end,
+		desc = "Code Action",
+	},
 	{ "<leader>cp", "<cmd>CodeCompanionChat<CR>", desc = "Copilot chat" },
+	{
+		"<leader>cd",
+		"<cmd>Telescope lsp_definitions<CR>",
+		desc = "Go to definition",
+	},
+	{ "<leader>cl", "<cmd>Telescope lsp_references<CR>", desc = "Find references" },
+	{
+		"<leader>ci",
+		"<cmd>Telescope lsp_implementations<CR>",
+		desc = "Go to implementations",
+	},
+	{
+		"<leader>cr",
+		function()
+			vim.lsp.buf.rename()
+		end,
+		desc = "Rename",
+	},
 	{},
 })
