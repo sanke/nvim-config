@@ -1,0 +1,21 @@
+# Neovim local state
+.nvim/
+.nvimrc
+Session.vim
+
+# Neovim swap / backup / undo
+*.swp
+*.swo
+*.swn
+*.swm
+*.sw?
+*.un~
+*.undo
+*.bak
+*~
+
+# Neovim runtime/state (XDG)
+.cache/nvim/
+.local/share/nvim/
+.local/state/nvim/
+
