@@ -20,6 +20,7 @@ return {
 
 			require("nvim-tree").setup({
 				on_attach = on_tree_attach, -- Tell Nvim-tree to use our keys
+				hijack_netrw = false,
 				view = {
 					float = {
 						enable = true,
@@ -394,14 +395,15 @@ return {
 				},
 				preset = {
 					keys = {
-						{ icon = " ", key = "f", desc = "Find File", action = ":Telescope find_files" },
-						{ icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
 						{
 							icon = " ",
 							key = "s",
 							desc = "Restore Session",
 							action = [[:lua require("persistence").load()]],
 						},
+						{ icon = "󰙅 ", key = "e", desc = "Browse Files", action = ":NvimTreeOpen" },
+						{ icon = " ", key = "f", desc = "Find File", action = ":Telescope find_files" },
+						{ icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
 						{ icon = "󰒲 ", key = "l", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy },
 						{ icon = " ", key = "q", desc = "Quit", action = ":qa" },
 					},
