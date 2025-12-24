@@ -20,7 +20,7 @@ keymap("n", "<C-l>", "<C-w>l", { desc = "Move to right window" })
 
 -- Copilot suggestion navigation
 keymap("i", "<C-.>", function()
-	require("copilot.suggestion").next()
+	require("/copilot.suggestion").next()
 	require("lualine").refresh()
 end, { desc = "Trigger Copilot Suggestion" })
 
@@ -36,14 +36,15 @@ wk.add({
 				ignore_current_buffer = true,
 			})
 		end,
+    icon = "",
 		desc = "Buffers",
 	},
-	{ "<leader>g", group = "General" },
-	{ "<leader>gd", vim.lsp.buf.definition, desc = "Go to Definition" },
-	{ "<leader>gr", require("telescope.builtin").lsp_references, desc = "Go to References" },
-	{ "<leader>gi", vim.lsp.buf.implementation, desc = "Go to Implementation" },
-	{ "<leader>gt", vim.lsp.buf.type_definition, desc = "Go to Type Definition" },
-	{ "<leader>go", vim.lsp.buf.declaration, desc = "Go to Declaration" },
+	{ "g", group = "General", icon = "󱘞" },
+	{ "gd", vim.lsp.buf.definition, desc = "Go to Definition" },
+	{ "gr", require("telescope.builtin").lsp_references, desc = "Go to References" },
+	{ "gi", vim.lsp.buf.implementation, desc = "Go to Implementation" },
+	{ "gt", vim.lsp.buf.type_definition, desc = "Go to Type Definition" },
+	{ "go", vim.lsp.buf.declaration, desc = "Go to Declaration" },
 	{ "<leader>c", group = "Code" },
 	{ "<leader>ca", vim.lsp.buf.code_action, desc = "Code Action" },
 	{
@@ -60,19 +61,20 @@ wk.add({
 	{ "<leader>cr", vim.lsp.buf.rename, desc = "Rename" },
 	{ "<leader>cs", require("telescope.builtin").lsp_document_symbols, desc = "Document Symbols" },
 	{ "<leader>cS", require("telescope.builtin").lsp_dynamic_workspace_symbols, desc = "Workspace Symbols" },
-	{ "<leader>e", ":NvimTreeToggle<CR>", desc = "File Explorer" },
+	{ "<leader>e", ":NvimTreeToggle<CR>", icon = "", desc = "File Explorer" },
 	{ "<leader>f", group = "Find" },
 	{
 		"<leader>fb",
 		function()
 			require("telescope.builtin").buffers()
 		end,
+		icon = "",
 		desc = "Buffers",
 	},
 	{ "<leader>fg", require("telescope.builtin").live_grep, desc = "Live Grep" },
 	{ "<leader>fh", require("telescope.builtin").help_tags, desc = "Help Tags" },
 	{ "<leader>fr", require("telescope.builtin").oldfiles, desc = "Recent Files" },
-	{ "<leader>m", "<cmd>Telescope marks<cr>", desc = "Marks" },
+	{ "<leader>m", "<cmd>Telescope marks<cr>", icon = "󱪾", desc = "Marks" },
 	{ "<leader>n", "<leader>nh", desc = "Clear Search Highlights" },
 	{
 		"<leader>p",
@@ -81,6 +83,7 @@ wk.add({
 				initial_mode = "normal",
 			})
 		end,
+		icon = "",
 		desc = "Clipboard History",
 	},
 	{ "<leader>q", group = "Quit/Session" },
@@ -92,8 +95,9 @@ wk.add({
 		end,
 		desc = "Select Session",
 	},
-	{ "<leader>rc", chat.toggle, desc = "Copilot Chat" },
-	{ "<leader>s", group = "Split" },
+	{ "<leader>r", desc = "Copilot", icon = "" },
+	{ "<leader>rc", chat.toggle, desc = "Chat", icon = "󰭹" },
+	{ "<leader>s", group = "Split", icon = "󰕪" },
 	{ "<leader>se", "<C-w>=", desc = "Equalize Splits" },
 	{ "<leader>sh", "<C-w>s", desc = "Split Horizontal" },
 	{ "<leader>sv", "<C-w>v", desc = "Split Vertical" },
@@ -107,6 +111,7 @@ wk.add({
 		end,
 		desc = "Workspace Diagnostics",
 	},
+	{ "<leader>u", "<cmd>Telescope undo<cr>", icon = "", desc = "Undo History" },
 	-- Non-leader mappings
 	{ "gl", vim.diagnostic.open_float, desc = "Line Diagnostics" },
 	{ "<leader><leader>", require("telescope.builtin").find_files, desc = "Find Files" },

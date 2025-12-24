@@ -179,7 +179,6 @@ return {
 		dependencies = { "nvim-telescope/telescope.nvim" },
 		config = function()
 			require("telescope").load_extension("undo")
-			vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<cr>", { desc = "Undo History" })
 		end,
 	},
 	{
@@ -193,14 +192,11 @@ return {
 		"hrsh7th/nvim-cmp",
 		dependencies = {
 			"hrsh7th/cmp-nvim-lsp", -- Connection to LSP
-			"L3MON4D3/LuaSnip", -- Snippet engine
-			"saadparwaiz1/cmp_luasnip", -- Snippet completions
 			"hrsh7th/cmp-buffer", -- Buffer completions (words in file)
 			"hrsh7th/cmp-path", -- File path completions
 		},
 		config = function()
 			local cmp = require("cmp")
-			local lspkind = require("lspkind")
 
 			cmp.setup({
 				snippet = {
@@ -219,7 +215,6 @@ return {
 				}),
 				sources = cmp.config.sources({
 					{ name = "nvim_lsp" }, -- Prioritize LSP completions
-					{ name = "luasnip" }, -- Snippets
 					{ name = "buffer" }, -- Words from the current file
 					{ name = "path" }, -- File system paths
 				}),
@@ -414,16 +409,9 @@ return {
 	{
 		"folke/which-key.nvim",
 		event = "VeryLazy",
-		opts = {},
-		keys = {
-			{
-				"<leader>?",
-				function()
-					require("which-key").show({ global = false })
-				end,
-				desc = "Buffer Local Keymaps (which-key)",
-			},
-		},
+		opts = {
+      preset = "helix"
+    },
 	},
 	{
 		"CopilotC-Nvim/CopilotChat.nvim",
