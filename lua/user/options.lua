@@ -20,7 +20,8 @@ opt.clipboard = "unnamedplus"
 -- allow scrolling past end of file
 opt.scrolloff = 15
 vim.opt.virtualedit = "onemore"
-
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 opt.termguicolors = true
 
 -- Diagnostics

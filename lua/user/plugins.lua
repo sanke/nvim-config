@@ -70,6 +70,15 @@ return {
     config = function()
       require("telescope").setup({
         defaults = {
+          vimgrep_arguments = {
+            "rg",
+            "--color=never",
+            "--no-heading",
+            "--with-filename",
+            "--line-number",
+            "--column",
+            "--smart-case", -- Change this to "--ignore-case" for strict case-insensitivity
+          },
           mappings = {
             i = {
               -- Use <C-j> and <C-k> to navigate the results list in insert mode
