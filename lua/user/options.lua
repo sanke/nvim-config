@@ -24,6 +24,8 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 opt.termguicolors = true
 
+-- Clear search highlighting with Esc
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -- Diagnostics
 vim.diagnostic.config({
   virtual_text = false, -- Turn off the text at the end of the line

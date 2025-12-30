@@ -185,6 +185,7 @@ return {
         direction = "float",      -- You can use 'horizontal', 'vertical', or 'float'
         float_opts = {
           border = "curved",
+          winblend = 0,
         },
       })
     end,
