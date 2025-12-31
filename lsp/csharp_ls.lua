@@ -7,10 +7,25 @@ return {
       cwd = config.cmd_cwd or config.root_dir,
       env = config.cmd_env,
       detached = config.detached,
+
     })
   end,
   filetypes = { 'cs' },
   init_options = {
     AutomaticWorkspaceInit = true,
+  },
+  settings = {
+    RoslynExtensionsOptions = {
+      AnalyzeOpenDocumentsOnly = false
+    }
+  },
+  root_markers = { 'sln', 'csproj', '.git' },
+  capabilities = {
+    -- HACK: Doesn't show any diagnostics if we do not set this to true
+    textDocument = {
+      diagnostic = {
+        dynamicRegistration = true,
+      },
+    },
   },
 }
